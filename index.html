@@ -68,10 +68,7 @@ function mira_finished()
     alert("You're all set!");
     read_ptr_at(0);
 }
-function gta_finished()
-{
-    alert("You're all set!");
-}
+
 function SC(x)
 {
     return '<script src="'+x+'.js"></scr'+'ipt>';
@@ -92,11 +89,6 @@ function MIRA(x)
     return SC('mira/'+x);
 }
 
-function GTA(x)
-{
-    return SC('gta/'+x);
-}
-
 var commons = '<script>function print(){}</scr'+'ipt>'+COMMON('exploit')+COMMON('helpers')+COMMON('malloc')+COMMON('rop')+COMMON('syscalls')+COMMON('syscalls2');
 
 function load_jb()
@@ -108,24 +100,14 @@ function load_mira()
 {
     document.write(commons+MIRA('mira')+MIRA('mira2')+MIRA('c-code')+'<script>mira_finished();</scr'+'ipt>');
 }
-function load_alfaGTAtest()
-{
-    document.write(commons+GTA('gta127')+GTA('gta127_2')+MIRA('c-code')+'<script>mira_finished();</scr'+'ipt>');
-}
-function load_alfaGTAtest3()
-{
-    document.write(commons+GTA('gta100')+GTA('gta100_2')+MIRA('c-code')+'<script>mira_finished();</scr'+'ipt>');
-}
+
 function load_netcat()
 {
     document.write(commons+MIRA('c-code')+'<script>mira_finished();</scr'+'ipt>');
 }
 </script>
 <a href="#" onclick="load_jb(); return false">JB</a>
-<a href="#" onclick="load_mira(); return false">MIRA</a>
+<a href="#" onclick="load_mira(); return false">GTA</a>
 <a href="#" onclick="load_netcat(); return false">NETCAT</a>
-<p>GTA tests by <a href="https://twitter.com/alfamodzz">@AlFaMoDzZ</a></p>
-<a href="#" onclick="load_alfaGTAtest(); return false">[1.27] GTA TEST TEST5</a>
-<a href="#" onclick="load_alfaGTAtest3(); return false">[1.00] GTA TEST24</a>
 </body>
 </html>
